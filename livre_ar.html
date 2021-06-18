@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html lang="ar" dir="rtl">
+
+    <head>
+        <title>أكبر مسابقات كرة القدم</title>
+        <link rel="shortcut icon" type="image/x-icon" href="style/ball.png" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="style/style.css" />
+        <script src="js/nicEdit.js"></script>
+    </head>
+
+    <body style="background-image: url(style/koras2.jpg);background-attachment: fixed;background-position: center;">
+        <div id="main">
+            <div id="header">
+                <div class="langages_ar">
+                    <span >
+                    <img src="style/fr.gif" alt="Francais"> 
+                    <a href="livre.html">فرنسي </a>
+                    </span>
+                    <span class="selectedL">
+                    <img src="style/Maroc.gif" alt="Arabe" />
+                    <a href="livre_ar.html">عربى</a>
+                    </span>
+                </div>
+                <div id="go">
+                    <div id="go_text">
+                        <h1><a href="index_ar.html">أكبر مسابقات كرة القدم</a></h1>
+                        
+                    </div>
+                </div>
+                <div class="topnav_ar" id="myTopnav">
+                   
+                    <div class="uls_ar">
+                        
+                        <a  href="index_ar.html">كاس العالم</a>
+                        <a href="euro_ar.html">كأس اوروبا</a>
+                        <a href="caf_ar.html">كأس إفريقيا</a>
+                        <a href="asie_ar.html">كأس آسيا</a>
+                        <a href="copa_ar.html">كوبا أمريكا</a>
+                        
+                        
+                        
+                        
+                    </div>   
+                    
+                    
+                </div>
+            </div>
+            <div id="content_header"></div>
+            <div id="site_content">
+                
+                    
+                </div>
+            
+                <div id="content">
+                    <h1 style="font-weight: bold ;color: rgb(255, 251, 0);font-size: 50px;font-family: cursive , sans-serif;margin-right: 30px;" class="arabe">سجل الزوار:</h1>
+                    <div id="msg"></div>
+                    <div class="form_settings">
+                        <form  id="form" action = "http://yasmina.emi.ac.ma/~ielannaoui/cgi-bin/python/guestbook.py">
+                            <p>
+                                <span class="arabeSpan">النسب :</span>
+                                <input class="contact" type="text" name="nom" placeholder=" ...اسمك العائلي " />
+                            </p>
+                            <p>
+                                <span class="arabeSpan">الإسم :</span>
+                                <input class="contact" type="text" name="prenom" placeholder=" ... اسمك الشخصي" />
+                            </p>
+                            <p>
+                                <span class="arabeSpan">البريد الإلكتروني :</span>
+                                <input class="contact" type="text" name="ville" placeholder=" exemple@gmail.com"/>
+                            </p>
+                            <p>
+                                <span class="arabeSpan">التعليق :</span>
+                                <textarea class="contact textarea" rows="8" cols="50" name="comment" placeholder=" ...تعليقك "></textarea>
+                            </p>
+                            <p style="padding-top: 15px">
+                            <span class="arabeSpan">&nbsp;</span>
+                            <input class="submit" type="submit" value="إرسال" onclick="updateForm(this.form);return false;"/></p>
+                        </form>
+                        <p class="arabe"> <a style="font-weight: bold ;color: rgb(255, 251, 0);font-size: 22px;font-family: cursive , sans-serif;;" href="http://yasmina.emi.ac.ma/~ielannaoui/guestbook.html">تصفح  سجل الزوار</a></p><p class="arabe"> <a style="font-weight: bold ;color: rgb(255, 251, 0);font-size: 22px;font-family: cursive , sans-serif;;" href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fyasmina.emi.ac.ma%2F~ielannaoui%2Flivre_ar.html">مصادقة W3C</a></p>
+                    </div>   
+                </div>
+            </div>
+            <div id="content_footer">
+            
+                <div id="footer">
+                    <p >© عماد العناوي ©</p>
+                    <p  ><a href="https://www.linkedin.com/in/imad-el-annaoui-abb4a21a0/"><img src="style/in.png" style="width: 30px ;height: 30px;" alt="example graphic"></a><a href="https://www.facebook.com/profile.php?id=100007272884870"><img src="style/fac.png" style="width: 30px ;height: 30px;" alt="example graphic"></a> | البريد الإلكتروني : imadelannaoui@student.emi.ac.ma |هاتف :0677011141</p>
+                    <p><a href="https://www.emi.ac.ma/">المدرسة المحمدية للمهندسين</a> 2020 ©</p>
+                    <p id="time"></p>
+                <script>
+                    function DateWebWorker() {
+                      var offsetUTC = +12,
+                      lD = new Date();
+                     
+                      document.getElementById('time').innerHTML = ""+lD.toLocaleString();
+                    }
+                     
+                    window.onload=function() {
+                      DateWebWorker();
+                      setInterval(DateWebWorker,1000);
+                    }
+                </script>
+                </div>
+            </div>
+        
+        <script >
+            function traiter(maForm){
+             var nav=navigator.userAgent;
+            var qryStr = "nom="+maForm.nom.value+"&"+
+                         "prenom="+maForm.prenom.value+"&"+
+                         "ville="+maForm.ville.value+"&"+
+                         "comment="+maForm.comment.value+"&"+
+                         "via="+nav;
+              var myXMLHttp=new XMLHttpRequest();
+      
+              var uri="http://yasmina.emi.ac.ma/~ielannaoui/cgi-bin/Python/guestbook.py";
+      
+              myXMLHttp.open("POST", uri, false);
+              myXMLHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+              myXMLHttp.send(qryStr);
+       
+              /* On traite la réponse */
+              if (myXMLHttp.readyState==4 && myXMLHttp.status==200){
+                document.getElementById("ici").innerHTML =  myXMLHttp.responseText;
+                maForm.reset();
+      
+                
+              } else {
+                document.write("Err: "+myXMLHttp.readyState +
+                        " " +myXMLHttp.status);
+              }
+            } 
+          </script>
+    </body>
+</html>

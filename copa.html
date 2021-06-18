@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+
+    <head>
+        <title>Les grandes compétitions de football </title>
+        <link rel="shortcut icon" type="image/x-icon" href="style/ball.png" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="style/style.css" />
+    </head>
+
+    <body>
+        <div id="main">
+            <div id="header">
+                <div class="langages">
+                    <span class="selectedL">
+                    <img src="style/fr.gif" alt="Francais"> 
+                    <a href="asie.html">Fr </a>
+                    </span>
+                    <span>
+                    <img src="style/Maroc.gif" alt="Arabe" />
+                    <a href="copa_ar.html">Ar</a>
+                    </span>
+                </div>
+                <div id="go">
+                    <div id="go_text">
+                        <h1><a href="index.html">Les grandes compétitions de football</a></h1>
+                        
+                    </div>
+                </div>
+                <div class="topnav" id="myTopnav">
+                   
+                    <div class="uls">
+                        <a href="index.html">Coupe du monde</a>
+                       <a href="euro.html">Coupe d'Europe</a>
+                        <a href="caf.html">Coupe d'Afrique</a>
+                        <a href="asie.html">Coupe d'Asie</a>
+                        <a class="active" href="copa.html">Copa América</a>
+                       
+                    </div>   
+                    
+                    
+                </div>
+            </div>
+            <div id="content_header"></div>
+            <div id="site_content">
+                <nav class="main-nav" >
+     
+                    <h4><a href="livre.html">Livre d'Or</a></h4>
+                    <h4><a href="http://yasmina.emi.ac.ma/~ielannaoui/guestbook.html">Consulter Livre d'Or</a></h4>
+                    <h4><a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fyasmina.emi.ac.ma%2F%7Eielannaoui%2Fcopa.html">Validateur W3C</a></h4>
+                    <h4><a href="https://fr.fifa.com/">FIFA</a></h4>  
+                    <h4><a href="https://fr.uefa.com/">UEFA</a></h4>
+                    <h4><a href="https://www.cafonline.com/">CAF</a></h4>
+                    <h4><a href="https://www.the-afc.com/">AFC</a></h4>
+                    <h4><a href="http://www.conmebol.com/">CONMEBOL</a></h4>
+                   
+               </nav>
+                <div id="content">
+                    <h1 style="font-size: 60px;text-align: center;margin-top: 20px;">Copa América</h1>
+                    <p style="text-align: center;"  ><img src="style/copa.jpg" alt="example graphic" style="width: 600px ;height: 400px;"/></p>
+                    
+                  
+                   <p>
+                       <br>
+                       La Copa América (en espagnol : Campeonato Sudamericano Copa América, en portugais : Campeonato Sul-Americano Copa América), la Coupe d'Amérique en français, est la plus importante compétition internationale de football organisée par la CONMEBOL 
+                       (avec des invitations pour des équipes de la CONCACAF ou l'AFC). Elle a lieu alternativement tous les deux, trois ou quatre ans depuis la première édition en 1916. Depuis 1984 et la disparition du British Home Championship, la Copa América est le plus vieux tournoi continental de l'histoire du football. L'actuel tenant du titre est le Brésil, vainqueur en 2019.
+                   </p>
+                   <h1 style="font-size: 40px;">Historique </h1>
+                   <p>
+                    Le format actuel du tournoi implique douze équipes nationales en compétition sur les sites d'un pays hôte au cours d'une période d'environ un mois. La confédération sud-américaine ne compte que dix membres, des équipes nationales des autres confédérations de la FIFA sont donc invitées à combler les deux places vacantes. Le Mexique, membre de la CONCACAF,
+                     est ainsi régulièrement convié depuis sa première participation en 1993. Depuis 1999, des équipes de l'AFC sont également conviées, comme c'est le cas pour le Japon et le Qatar en 2019. En 45 éditions, huit équipes nationales ont remporté le titre. L'Uruguay mène au nombre de victoires avec 15 titres. L'Argentine en possède 14, le Brésil a remporté neuf trophées, le Chili, 
+                     le Paraguay et le Pérou suivent avec deux titres chacun. Les deux autres champions sont la Bolivie et la Colombie, avec un titre chacun.
+                    La Copa América est un des événements sportifs mondiaux les plus suivis. L'édition 2007 a eu une audience estimée à 530 millions de téléspectateurs en Amérique latine et une audience mondiale cumulée de quatre milliards de personnes à travers 185 pays. Le tenant du titre de la Copa América était invité à participer à l'édition suivante de la Coupe des confédérations2 avant la suppression de cette dernière en 2019.
+                   </p>
+                   
+                   
+                   <p style="text-align: center;"  ><img src="style/cop.jpg" alt="example graphic" style="width: 600px ;height: 600px;"/></p>
+                   
+                </div>
+            </div>
+
+
+
+
+
+           
+            <div id="footer">
+                <p>© EL ANNOUI Imad ©</p>
+                <p><a href="https://www.linkedin.com/in/imad-el-annaoui-abb4a21a0/"><img src="style/in.png" style="width: 30px ;height: 30px;" alt="example graphic"></a><a href="https://www.facebook.com/profile.php?id=100007272884870"><img src="style/fac.png" style="width: 30px ;height: 30px;" alt="example graphic"></a> | Email : imadelannaoui@student.emi.ac.ma | Tél :06 77 01 11 41</p>
+                <p>Copyright © 2020 -- <a href="https://www.emi.ac.ma/">Ecole Mohammadia d'Ingénieurs </a> </p>
+                <p id="time"></p>
+                <script>
+                    function DateWebWorker() {
+                      var offsetUTC = +12,
+                      lD = new Date();
+                     
+                      document.getElementById('time').innerHTML = ""+lD.toLocaleString();
+                    }
+                     
+                    window.onload=function() {
+                      DateWebWorker();
+                      setInterval(DateWebWorker,1000);
+                    }
+                </script>
+            </div>
+        </div>
+    </body>
+</html>

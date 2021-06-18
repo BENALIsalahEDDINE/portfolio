@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+
+    <head>
+        <title>Les grandes compétitions de football </title>
+        <link rel="shortcut icon" type="image/x-icon" href="style/ball.png" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="style/style.css" />
+        <script src="js/nicEdit.js"></script>
+    </head>
+
+    <body style="background-image: url(style/koras.jpg);background-attachment: fixed;background-position: center;">
+        <div id="main">
+            <div id="header">
+                <div class="langages">
+                    <span class="selectedL">
+                    <img src="style/fr.gif" alt="Francais"> 
+                    <a href="livre.html">Fr </a>
+                    </span>
+                    <span>
+                    <img src="style/Maroc.gif" alt="Arabe" />
+                    <a href="livre_ar.html">Ar</a>
+                    </span>
+                </div>
+                <div id="go">
+                    <div id="go_text">
+                        <h1><a href="index.html">Les grandes compétitions de football</a></h1>
+                        
+                    </div>
+                </div>
+                <div class="topnav" id="myTopnav">
+                   
+                    <div class="uls">
+                        <a  href="index.html">Coupe du monde</a>
+                       <a href="euro.html">Coupe d'Europe</a>
+                        <a href="caf.html">Coupe d'Afrique</a>
+                        <a href="asie.html">Coupe d'Asie</a>
+                        <a href="copa.html">Copa América</a>
+                       
+                    </div>   
+                    
+                    
+                </div>
+            </div>
+            <div id="content_header"></div>
+            <div id="site_content">
+                
+               
+                <div id="content">
+                    <h1 style="font-weight: bold ;color: rgb(255, 251, 0);font-size: 50px;font-family: cursive , sans-serif;;">Livre D'or :</h1>
+                    
+                    <div class="form_settings">
+                        <form id="form"  action = "http://yasmina.emi.ac.ma/~ielannaoui/cgi-bin/python/guestbook.py">
+                            <p>
+                                <span>Nom :</span>
+                                <input class="contact" type="text" name="nom" placeholder="Votre nom ... " />
+                            </p>
+                            <p>
+                                <span>Prenom :</span>
+                                <input class="contact" type="text" name="prenom" placeholder="Votre prenom ..."/>
+                            </p>
+                            <p>
+                                <span>Email :</span>
+                                <input class="contact" type="text" name="ville" placeholder="exemple@gmail.com" />
+                            </p>
+                            <p>
+                                <span>Commentaire :</span>
+                                <div>
+                                <textarea id="comment"  placeholder="Ecrivez votre message ..." class="contact textarea" rows="8" cols="50" name="comment"></textarea>
+                                </div>
+
+                            <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" value="Envoyer" onclick="updateForm(this.form);return false;"/></p>
+                        </form>
+                       <a style="font-weight: bold ;color: rgb(255, 251, 0);font-size: 22px;font-family: cursive , sans-serif;;" href="http://yasmina.emi.ac.ma/~ielannaoui/guestbook.html">Consulter le livre d'or</a><br/>
+<a style="font-weight: bold ;color: rgb(255, 251, 0);font-size: 22px;font-family: cursive , sans-serif;;" href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fyasmina.emi.ac.ma%2F%7Eielannaoui%2Flivre.html">Validateur W3C</a>
+                    </div>   
+                </div>
+            </div>
+            <div id="footer">
+                <p>© EL ANNOUI Imad ©</p>
+                <p><a href="https://www.linkedin.com/in/imad-el-annaoui-abb4a21a0/"><img src="style/in.png" style="width: 30px ;height: 30px;" alt="example graphic"></a><a href="https://www.facebook.com/profile.php?id=100007272884870"><img src="style/fac.png" style="width: 30px ;height: 30px;" alt="example graphic"></a> | Email : imadelannaoui@student.emi.ac.ma | Tél :06 77 01 11 41</p>
+                <p>Copyright © 2020 -- <a href="https://www.emi.ac.ma/">Ecole Mohammadia d'Ingénieurs </a> </p>
+                <p id="time"></p>
+                <script>
+                    function DateWebWorker() {
+                      var offsetUTC = +12,
+                      lD = new Date();
+                     
+                      document.getElementById('time').innerHTML = ""+lD.toLocaleString();
+                    }
+                     
+                    window.onload=function() {
+                      DateWebWorker();
+                      setInterval(DateWebWorker,1000);
+                    }
+                </script>
+            </div>
+        </div>
+        <script >
+            function traiter(maForm){
+             var nav=navigator.userAgent;
+            var qryStr = "nom="+maForm.nom.value+"&"+
+                         "prenom="+maForm.prenom.value+"&"+
+                         "ville="+maForm.ville.value+"&"+
+                         "comment="+maForm.comment.value+"&"+
+                         "via="+nav;
+              var myXMLHttp=new XMLHttpRequest();
+      
+              var uri="http://yasmina.emi.ac.ma/~ielannaoui/cgi-bin/Python/guestbook.py";
+      
+              myXMLHttp.open("POST", uri, false);
+              myXMLHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+              myXMLHttp.send(qryStr);
+       
+              /* On traite la réponse */
+              if (myXMLHttp.readyState==4 && myXMLHttp.status==200){
+                document.getElementById("ici").innerHTML =  myXMLHttp.responseText;
+                maForm.reset();
+      
+                
+              } else {
+                document.write("Err: "+myXMLHttp.readyState +
+                        " " +myXMLHttp.status);
+              }
+            } 
+          </script>
+    </body>
+</html>
